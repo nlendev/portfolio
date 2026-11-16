@@ -3,13 +3,19 @@ import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="À propos" />
+    <Head title="A propos">
+        <meta
+            head-key="description"
+            name="description"
+            content="Portfolio de Nathanaël Lenaerts, développeuse web Laravel et Vue.js à Wavre."
+        />
+    </Head>
 
     <main class="about space-y-12">
 
         <header class="about-header space-y-4">
-            <h1 class="text-3xl font-bold">À propos de moi</h1>
-            <h2 class="text-xl font-semibold">
+            <h1 class="font-display text-3xl font-bold">À propos de moi</h1>
+            <h2 class="font-display text-xl font-semibold">
                 Derrière chaque ligne de code, une idée à concrétiser.
             </h2>
 
@@ -43,7 +49,7 @@ import { Head, Link } from '@inertiajs/vue3';
         </header>
 
         <section class="about-vision space-y-4">
-            <h2 class="text-2xl font-bold">Ma vision du développement</h2>
+            <h2 class="font-display text-2xl font-bold">Ma vision du développement</h2>
 
             <div class="space-y-4">
                 <p>
@@ -99,7 +105,7 @@ import { Head, Link } from '@inertiajs/vue3';
         </section>
 
         <section class="about-skills space-y-4">
-            <h2 class="text-2xl font-bold">Mon univers technique</h2>
+            <h2 class="font-display text-2xl font-bold">Mon univers technique</h2>
 
             <div class="space-y-4">
                 <p>
@@ -128,7 +134,7 @@ import { Head, Link } from '@inertiajs/vue3';
         </section>
 
         <section class="about-personality space-y-4">
-            <h2 class="text-2xl font-bold">Au-delà du code</h2>
+            <h2 class="font-display text-2xl font-bold">Au-delà du code</h2>
 
             <div class="space-y-4">
                 <p>
@@ -156,7 +162,7 @@ import { Head, Link } from '@inertiajs/vue3';
         </section>
 
         <section class="about-contact space-y-4">
-            <h2 class="text-2xl font-bold">Et maintenant ?</h2>
+            <h2 class="font-display text-2xl font-bold">Et maintenant ?</h2>
 
             <div class="space-y-4">
                 <p>
@@ -183,7 +189,7 @@ import { Head, Link } from '@inertiajs/vue3';
 
             <Link
                 href="/contact"
-                class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition"
+                class="inline-block rounded-lg bg-brand px-6 py-3 text-brand-contrast transition hover:opacity-80"
             >
                 Me contacter
             </Link>

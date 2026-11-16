@@ -1,10 +1,9 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import ProjectCard from '@/components/ProjectCard.vue';
-import { Button } from '@/components/ui/button';
-import { contact } from '@/routes';
-import { index as projectsIndex } from '@/routes/projects';
-
+import { Head, Link } from "@inertiajs/vue3";
+import ProjectCard from "@/components/ProjectCard.vue";
+import { Button } from "@/components/ui/button";
+import { contact } from "@/routes";
+import { index as projectsIndex } from "@/routes/projects";
 
 defineProps({
     author: String,
@@ -13,7 +12,13 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Accueil" />
+    <Head title="Accueil">
+        <meta
+            head-key="description"
+            name="description"
+            content="Portfolio de Nathanaël Lenaerts, développeuse web Laravel et Vue.js à Wavre."
+        />
+    </Head>
 
     <section class="space-y-4 py-12 md:py-20">
         <p class="font-medium text-brand">Développeur web</p>

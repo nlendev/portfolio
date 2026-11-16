@@ -38,7 +38,12 @@ class ProjectController extends Controller
                 ...$project->only('title', 'slug', 'summary', 'content', 'demo_url', 'repo_url'),
                 'cover_url' => $project->cover_url,
                 'tags' => $project->tags->pluck('name'),
-            ],
-        ]);
+            ], ])->withViewData([
+                'meta' => [
+                    'title' => $project->title,
+                    'description' => $project->summary,
+                    'image' => $project->cover_url,
+                ],
+            ]);
     }
 }

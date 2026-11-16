@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from '@inertiajs/vue3';
+import { Head } from "@inertiajs/vue3";
 
 defineProps({
     project: Object,
@@ -7,12 +7,26 @@ defineProps({
 </script>
 
 <template>
-    <Head :title="project.title" />
+<Head :title="project.title">
+    <meta
+        head-key="description"
+        name="description"
+        :content="project.summary"
+    />
+</Head>
+
 
     <article>
         <h1>{{ project.title }}</h1>
         <p>{{ project.summary }}</p>
-        <img v-if="project.cover_url" :src="project.cover_url" alt="" width="600" />
+        <img
+            v-if="project.cover_url"
+            :src="project.cover_url"
+            alt=""
+            width="1200"
+            height="675"
+            class="aspect-video w-full rounded-lg object-cover"
+        />
         <ul>
             <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
         </ul>

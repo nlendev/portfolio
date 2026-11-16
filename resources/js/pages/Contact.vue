@@ -3,7 +3,13 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="À propos" />
+    <Head title="Contact">
+        <meta
+            head-key="description"
+            name="description"
+            content="Portfolio de Nathanaël Lenaerts, développeuse web Laravel et Vue.js à Wavre."
+        />
+    </Head>
 
     <h1>Contact</h1>
 
