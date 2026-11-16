@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProjectController;
@@ -17,7 +18,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('projets', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('projets/{project:slug}', [ProjectController::class, 'show'])->name('projects.show');
 Route::inertia('a-propos', 'About')->name('about');
-Route::inertia('contact', 'Contact')->name('contact');
+Route::inertia('mentions-legales', 'Legal')->name('legal');
+Route::get('contact', [ContactController::class, 'create'])->name('contact');
+Route::post('contact', [ContactController::class, 'store'])
+    ->middleware('throttle:3,1')
+    ->name('contact.store');
+
+
 
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {

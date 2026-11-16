@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
 
         Inertia::handleExceptionsUsing(function (ExceptionResponse $response) {
-            if (in_array($response->statusCode(), [403, 404])) {
+            if (in_array($response->statusCode(), [403, 404, 429])) {
                 return $response->render('ErrorPage', [
                     'status' => $response->statusCode(),
                 ])->withSharedData();

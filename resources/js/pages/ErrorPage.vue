@@ -7,21 +7,18 @@ const props = defineProps({
     status: Number,
 });
 
-const title = computed(() =>
-    props.status === 404 ? 'Page introuvable' : 'Accès refusé',
-);
+const titles = {
+    403: 'Accès refusé',
+    404: 'Page introuvable',
+    429: "Trop d'envois",
+};
 
-const message = computed(() =>
-    props.status === 404
-        ? "Cette page n'existe pas ou n'est plus en ligne."
-        : "Vous n'avez pas accès à cette page.",
-);
+const messages = {
+    403: "Vous n'avez pas accès à cette page.",
+    404: "Cette page n'existe pas ou n'est plus en ligne.",
+    429: 'Réessayez dans une minute.',
+};
+
+const title = computed(() => titles[props.status]);
+const message = computed(() => messages[props.status]);
 </script>
-
-<template>
-    <Head :title="title" />
-
-    <h1>{{ status }} · {{ title }}</h1>
-    <p>{{ message }}</p>
-    <Link :href="home()">Retour à l'accueil</Link>
-</template>
